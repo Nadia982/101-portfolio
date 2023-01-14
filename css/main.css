@@ -25,8 +25,9 @@ h4 {
 section h2,
 footer h2 {
   text-align: center;
-  font-size: 36px;
-  padding: 2em 0 1em 0;
+  font-size: 2rem;
+  padding: 2em 0 1.5em 0;
+  font-weight: 600;
 }
 
 /****** Header Styles ******/
@@ -53,8 +54,8 @@ footer h2 {
   border-bottom: 2px solid #817f80;
 }
 
-header h1 {
-  width: 30%;
+#header-h1 {
+  width: 40%;
   margin-left: 0.5em;
   font-size: clamp(1.5rem, 3vw, 3rem);
   display: flex;
@@ -70,7 +71,7 @@ header h1 {
 
 #header-h2 {
   width: 80%;
-  font-size: 3rem;
+  font-size: clamp(2.3rem, 5vw, 4rem);
   color: #817f80;
   margin: 0 0.5em;
   padding: 3em 0;
@@ -121,8 +122,8 @@ nav ul li a {
 #about p {
   width: 35%;
   padding: 0;
-  line-height: 1.6em;
   font-size: 1.5rem;
+  line-height: 2.5rem;
 }
 
 /****** Skill Styles ******/
@@ -152,13 +153,13 @@ nav ul li a {
 
 #skills h3 {
   margin: 30px 0 20px 0;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
 }
 
 #skills p {
-  font-size: 20px;
-  line-height: 40px;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
 }
 
 /****** Contact Styles ******/
@@ -175,12 +176,14 @@ nav ul li a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  column-gap: 5%;
 }
 
 .contact-image {
   width: 50%;
   max-width: 550px;
   text-align: center;
+  padding-bottom: 3em;
 }
 
 .contact-image img {
@@ -192,20 +195,24 @@ nav ul li a {
 }
 
 .contact-info {
-  width: 45%;
+  width: 50%;
   max-width: 550px;
+  min-height: 200px;
   box-sizing: border-box;
   margin: 0 auto;
-}
-
-#contact h2 {
-  font-weight: 600;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  padding-bottom: 3em;
+  text-align: center;
 }
 
 #contact h3 {
   font-weight: 400;
   font-size: 1.5rem;
-  line-height: 3rem;
+  line-height: 2.5rem;
 }
 
 .contact-icon {
@@ -213,16 +220,34 @@ nav ul li a {
   width: 1.3rem;
 }
 
+footer {
+  /* padding:  */
+}
+
 @media only screen and (max-width: 425px) {
   #about p {
     width: 100%;
+    margin-bottom: 2em;
   }
 
-  .skill-list,
+  nav ul {
+    flex-direction: column;
+  }
+
+  .skill-list {
+    width: 100%;
+  }
+
   .skills-container,
   .contact-image,
-  .contact-info {
+  .contact-info,
+  .about-container {
     width: 100%;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-container {
+    flex-direction: column-reverse;
   }
 }
